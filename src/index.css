@@ -1,0 +1,149 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 30% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 84% 5%;
+
+    --radius: 0.5rem;
+
+    /* Trading-specific colors */
+    --success: 145 63% 42%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 40% 98%;
+    
+    --buy: 164 75% 40%;
+    --buy-foreground: 0 0% 100%;
+    
+    --sell: 358 75% 59%;
+    --sell-foreground: 0 0% 100%;
+    
+    --matched: 250 83% 62%;
+    --matched-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 213 27% 84%;
+
+    /* Trading-specific colors in dark mode */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 34 100% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --buy: 164 75% 40%;
+    --buy-foreground: 0 0% 100%;
+    
+    --sell: 358 75% 59%;
+    --sell-foreground: 0 0% 100%;
+    
+    --matched: 250 83% 62%;
+    --matched-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-black/50 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 dark:bg-black/30 backdrop-blur-sm border border-white/20 dark:border-black/20 focus:border-primary/50 dark:focus:border-primary/50 outline-none transition-all;
+  }
+  
+  .shimmer {
+    @apply bg-gradient-to-r from-transparent via-white/20 to-transparent bg-[length:200%_100%] animate-shimmer;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Improve selection styles */
+::selection {
+  @apply bg-primary/20 text-foreground;
+}
