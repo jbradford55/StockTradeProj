@@ -12,10 +12,10 @@ Follow these steps to run the project on your local machine:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone https://github.com/your-username/tradeflux-matcher.git
+git clone https://github.com/jbradford55/StockTradeProj.git
 
 # Step 2: Navigate to the project directory.
-cd tradeflux-matcher
+cd StockTradeProj
 
 # Step 3: Install the necessary dependencies.
 npm install
